@@ -1,0 +1,65 @@
+<ion-content>
+  <div class="order-page">
+    <h2 class="page-title" style="text-align: center; color: rgb(64, 64, 64);">Status Pesanan</h2>
+
+    <!-- Search Bar -->
+    <ion-searchbar 
+      [(ngModel)]="searchTerm" 
+      (ionChange)="searchPesanan()"
+      placeholder="Cari pesanan...">
+    </ion-searchbar>
+
+    <!-- Order List -->
+    <div class="orders-container">
+      <ion-list>
+        <ion-item *ngFor="let pesanan of pesanan" class="order-item">
+          <ion-card class="order-card">
+            <ion-card-header>
+              <ion-card-title>{{pesanan.buyer_name}}</ion-card-title>
+              <ion-badge [color]="getStatusColor(pesanan.status)" class="status-badge">
+                {{pesanan.status}}
+              </ion-badge>
+            </ion-card-header>
+
+            <ion-card-content>
+              <div class="order-details">
+                <div class="detail-item">
+                  <ion-icon name="cube-outline"></ion-icon>
+                  <span>{{pesanan.product_info}}</span>
+                </div>
+                <div class="detail-item">
+                  <ion-icon name="calculator-outline"></ion-icon>
+                  <span>{{pesanan.product_quantity}} pcs</span>
+                </div>
+                <div class="detail-item">
+                  <ion-icon name="location-outline"></ion-icon>
+                  <span>{{pesanan.delivery_address}}</span>
+                </div>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="action-buttons" [ngClass]="{'center-button': pesanan.status === 'Selesai'}">
+                <ion-button fill="clear" (click)="openDetailModal(pesanan)">
+                  <ion-icon slot="start" name="information-circle-outline"></ion-icon>
+                  Detail
+                </ion-button>
+                <ion-button 
+                  fill="clear" 
+                  color="success" 
+                  (click)="updateStatus(pesanan)"
+                  *ngIf="pesanan.status !== 'Selesai'">
+                  <ion-icon slot="start" name="checkmark-circle-outline"></ion-icon>
+                  Selesaikan
+                </ion-button>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-item>
+      </ion-list>
+
+      <ion-infinite-scroll>
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,32 @@
+
+<ion-content>
+  <div class="login-container">
+    <div class="content-wrapper">
+      <div class="title-container">
+        <h1 class="main-title">Titip.in</h1>
+        <p class="sub-title">Jasa Titip Online</p>
+      </div>
+      <div class="login-box">
+        <div class="login-header">
+          <img src="https://junaidy.rpl22.my.id/logo.png" alt="HKDC Logo" class="login-logo">
+        </div>
+        <form (ngSubmit)="login()">
+          <div class="input-container">
+            <ion-icon name="person"></ion-icon>
+            <input type="text" [(ngModel)]="username" name="username" required placeholder="Username">
+          </div>
+          <div class="input-container">
+            <ion-icon name="lock-closed"></ion-icon>
+            <input type="password" [(ngModel)]="password" name="password" required placeholder="Password">
+          </div>
+          <ion-button expand="full" type="submit">Login</ion-button>
+        </form>
+        <div>
+          <p class="help">Jika Anda tidak memiliki akun, silakan <a href="daftar">buat akun</a> .</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+

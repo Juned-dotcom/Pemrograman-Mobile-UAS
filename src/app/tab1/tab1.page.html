@@ -1,0 +1,100 @@
+<ion-content class="background-container">
+  <div class="contact-page">
+    <!-- Header Section with Logout -->
+    <div class="header">
+      <span class="user-name" style="color: rgb(64, 64, 64);">{{ userName }}</span>
+      <ion-buttons slot="end">
+        <ion-button (click)="logout()">
+          <ion-icon class="logouticon" name="log-out-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </div>
+
+    <!-- Header Section -->
+    <section class="header-section">
+      <h1>Cara Pemesanan</h1>
+      <p>Berikut adalah langkah-langkah untuk melakukan pemesanan di Titip.in</p>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-image">
+            <ion-icon name="globe-outline" class="service-icon"></ion-icon>
+          </div>
+          <h2>Belanja Internasional</h2>
+          <p>Beli barang impor online luar negeri dengan mudah walaupun tidak memiliki kartu kredit dan paypal tanpa rasa takut pesanan tidak sampai, dibeliin, dikirimin, diurusin</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-image">
+            <ion-icon name="card-outline" class="service-icon"></ion-icon>
+          </div>
+          <h2>Pembayaran Online</h2>
+          <p>Mau beli giftcard, pesan hotel, tiket pesawat, template, software, buku digital, atau cuma bayarin orderan kamu di ebay, amazon, alibaba, aliexpress dll. BISA DONG!</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-image">
+            <ion-icon name="cube-outline" class="service-icon"></ion-icon>
+          </div>
+          <h2>Pengadaan Barang</h2>
+          <p>Melayani kebutuhan barang impor dari Amerika, China, dan negara lain serta dalam negeri untuk pedagang, toko, perusahaan. satuan maupun partai besar.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Order Section -->
+    <section class="order-section">
+      <div class="section-header">
+        <span class="subtitle">HOW TO ORDER</span>
+        <h2>Cara pemesanan</h2>
+      </div>
+
+      <div class="order-process">
+        <div class="process-steps">
+          <div class="step-info">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Buat Permintaan</h3>
+              <p>Buat request untuk produk yang ingin kamu beli pada formulir yang tersedia dengan menyertakan detailnya, seperti link barang, nama produk, pilihan tambahan, berat dan volume, dan lainnya yang dapat memudahkan kami untuk proses kalkulasi biaya.</p>
+            </div>
+          </div>
+
+          <div class="step-info">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Penawaran Harga</h3>
+              <p>Kami akan memberikan penawaran harga setelah menerima request kamu.</p>
+            </div>
+          </div>
+
+          <div class="step-info">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Deal dan Transaksi</h3>
+              <p>Setelah menerima estimasi biaya yang kami berikan, Anda dapat melanjutkan dengan melakukan pembayaran sesuai dengan jenis layanan yang Anda pilih.</p>
+            </div>
+          </div>
+
+          <div class="step-info">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3>Tunggu Pesanan Datang</h3>
+              <p>Great, sekarang kamu tinggal tunggu barangnya datang, kami yang akan beliin, kirimin dan urusin. ngga perlu ribet</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-illustration">
+          <img src="assets/image/mobile-commerce.png" alt="Steps">
+        </div>
+      </div>
+
+      <div class="request-button">
+        <ion-button expand="block" [routerLink]="['/tabs/tab2']">Request</ion-button>
+      </div>
+    </section>
+  </div>
+</ion-content>

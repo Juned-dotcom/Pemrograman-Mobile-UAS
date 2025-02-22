@@ -1,0 +1,65 @@
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Pendaftaran Akun</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="background-container">
+    <div class="register-container">
+      <h2>Daftar Akun</h2>
+      
+      <form (ngSubmit)="onSubmit()">
+        <ion-item>
+          <ion-label position="floating">Nama Lengkap</ion-label>
+          <ion-input 
+            type="text" 
+            [(ngModel)]="formData.fullName" 
+            name="fullName" 
+            required>
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Username</ion-label>
+          <ion-input 
+            type="text" 
+            [(ngModel)]="formData.username" 
+            name="username" 
+            required>
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input 
+            type="password" 
+            [(ngModel)]="formData.password" 
+            name="password" 
+            required>
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Konfirmasi Password</ion-label>
+          <ion-input 
+            type="password" 
+            [(ngModel)]="formData.confirmPassword" 
+            name="confirmPassword" 
+            required>
+          </ion-input>
+        </ion-item>
+
+        <ion-button expand="block" type="submit" class="ion-margin-top">
+          Daftar
+        </ion-button>
+
+        <div class="login-link">
+          Sudah punya akun? 
+          <a routerLink="/login">Login di sini</a>
+        </div>
+      </form>
+    </div>
+  </ion-content>
+</ion-content>

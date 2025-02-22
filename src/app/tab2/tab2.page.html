@@ -1,0 +1,83 @@
+<ion-content class="background-container">
+  <div class="scroll-content">
+    
+    <div class="ion-padding">
+      <div class="header">
+        <span class="user-name" style="color: rgb(232, 224, 224);"></span>
+      </div>
+      
+      <h2 class="main-title">Selamat Datang di Aplikasi Titip.in</h2>
+      <p class="sub-title">Aplikasi ini dibuat untuk memudahkan pemesanan barang dari luar negri.</p>
+      
+      <!-- Tambahkan section informasi -->
+      <div class="info-container">
+        <div class="info-item">
+          <div class="info-icon">
+            <ion-icon name="search-outline"></ion-icon>
+          </div>
+          <p class="info-text">Telusuri produk sesuai keinginan anda dari berbagai online shop luar negeri</p>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">
+            <ion-icon name="mail-outline"></ion-icon>
+          </div>
+          <p class="info-text">Kirimkan informasi produk yang anda inginkan melalui form ini</p>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">
+            <ion-icon name="checkmark-circle-outline"></ion-icon>
+          </div>
+          <p class="info-text">Dapatkan penawaran harga terbaik dari kami dan transaksi tanpa ribet</p>
+        </div>
+      </div>
+
+      <ion-card class="card">
+        <ion-card-header>
+          <ion-card-title>Form Permintaan</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <form (ngSubmit)="addPesanan()">
+
+            
+            <ion-item>
+              <ion-label position="stacked">Nama Lengkap</ion-label>
+              <ion-input type="text" [(ngModel)]="buyerName" name="buyerName" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked">Nomor Telepon</ion-label>
+              <ion-input type="tel" [(ngModel)]="buyerPhone" name="buyerPhone" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked">Alamat Pengiriman</ion-label>
+              <ion-textarea rows="4" [(ngModel)]="deliveryAddress" name="deliveryAddress" placeholder="Masukkan alamat pengiriman"></ion-textarea>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked">Informasi Produk</ion-label>
+              <ion-textarea rows="4" [(ngModel)]="productInfo" name="productInfo" placeholder="Masukkan detail produk yang diinginkan"></ion-textarea>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked">Jumlah Produk</ion-label>
+              <ion-input type="number" [(ngModel)]="productQuantity" name="productQuantity" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked">Upload Gambar Produk (Opsional)</ion-label>
+              <ion-input type="file" accept="image/*" (change)="onFileSelected($event)"></ion-input>
+            </ion-item>
+
+
+            <ion-button type="submit" expand="block" class="ion-margin-top">
+              Kirim Permintaan
+            </ion-button>
+          </form>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,81 @@
+<ion-content class="modal-content">
+  <ion-toolbar color="primary" class="modal-header">
+    <ion-title>Detail Pesanan</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon name="close-outline" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+  <div class="detail-container">
+    <ion-card>
+      <ion-card-content>
+        <!-- Status Badge -->
+        <div class="status-container">
+          <ion-badge [color]="getStatusColor(orderDetail.status)" class="status-badge">
+            {{ orderDetail.status }}
+          </ion-badge>
+        </div>
+
+        <!-- Customer Info -->
+        <div class="info-section">
+          <h2 class="section-title">Informasi Pelanggan</h2>
+          <div class="info-item">
+            <ion-icon name="person-outline"></ion-icon>
+            <div class="info-content">
+              <span class="label">Nama Pemesan</span>
+              <span class="value">{{ orderDetail.buyer_name }}</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <ion-icon name="call-outline"></ion-icon>
+            <div class="info-content">
+              <span class="label">No. Telepon</span>
+              <span class="value">{{ orderDetail.buyer_phone }}</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <ion-icon name="location-outline"></ion-icon>
+            <div class="info-content">
+              <span class="label">Alamat Pengiriman</span>
+              <span class="value">{{ orderDetail.delivery_address }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="info-section">
+          <h2 class="section-title">Informasi Produk</h2>
+          <div class="info-item">
+            <ion-icon name="cube-outline"></ion-icon>
+            <div class="info-content">
+              <span class="label">Detail Produk</span>
+              <span class="value">{{ orderDetail.product_info }}</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <ion-icon name="calculator-outline"></ion-icon>
+            <div class="info-content">
+              <span class="label">Jumlah</span>
+              <span class="value">{{ orderDetail.product_quantity }} pcs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Image -->
+        <div class="info-section" *ngIf="orderDetail.product_image">
+          <h2 class="section-title">Gambar Produk</h2>
+          <div class="image-container">
+            <ion-img [src]="orderDetail.product_image"></ion-img>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+
+

@@ -1,0 +1,389 @@
+// ... existing background styles ...
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.service-item {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}
+
+.how-to-order {
+  margin-bottom: 60px;
+
+  h2 {
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+}
+
+.order-steps {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.phone-container {
+  position: relative;
+  flex-shrink: 0;
+
+  img {
+    width: 300px;
+    height: auto;
+  }
+
+  .step-markers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .step-number {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #ff6b6b;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+}
+
+.steps-description {
+  flex: 1;
+
+  .step-item {
+    margin-bottom: 30px;
+
+    h3 {
+      color: white;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+  }
+}
+
+// ... existing card styles ...
+
+.background-container {
+  --background: #f5f7fa;
+}
+
+.services-section {
+  padding: 60px 20px;
+  background: #f8f9fa;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: white;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .service-icon {
+    font-size: 64px;
+    color: #ff6b6b;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+
+  p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+}
+
+.order-section {
+  padding: 80px 20px;
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+
+    .subtitle {
+      color: #ff6b6b;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 36px;
+      color: #333;
+      font-weight: 700;
+      margin: 0;
+    }
+  }
+}
+
+.order-process {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 50px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.process-steps {
+  flex: 1;
+}
+
+.step-info {
+  display: flex;
+  margin-bottom: 40px;
+  
+  .step-number {
+    width: 50px;
+    height: 50px;
+    background: #ff6b6b;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-right: 20px;
+  }
+
+  .step-content {
+    h3 {
+      color: #333;
+      font-size: 20px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    p {
+      color: #666;
+      line-height: 1.6;
+      font-size: 16px;
+      margin: 0;
+    }
+  }
+}
+
+.phone-illustration {
+  flex: 0 0 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    flex: 0 0 300px;
+  }
+}
+
+.request-button {
+  text-align: center;
+  margin-top: 40px;
+
+  ion-button {
+    --background: #ff6b6b;
+    --padding-start: 40px;
+    --padding-end: 40px;
+    --border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    height: 50px;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  .user-name {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .logouticon {
+    font-size: 24px;
+    color: #ff6b6b;
+  }
+}
+
+.main-title {
+  color: #333333;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.sub-title {
+  color: #666666;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.info-item {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .info-icon {
+    margin-bottom: 15px;
+    
+    ion-icon {
+      font-size: 30px;
+      color: #ff6b6b;
+    }
+  }
+}
+
+.info-text {
+  color: #666666;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.card {
+  margin-bottom: 240px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  ion-card-header {
+    ion-card-title {
+      color: #333333;
+    }
+  }
+
+  ion-card-content {
+    ion-item {
+      --background: #f8f9fa;
+      --border-color: #dee2e6;
+      margin-bottom: 10px;
+      border-radius: 5px;
+
+      ion-label {
+        color: #333333;
+      }
+
+      ion-input, ion-textarea {
+        color: #333333;
+        --placeholder-color: #6c757d;
+      }
+    }
+
+    ion-button {
+      --background: #ff6b6b;
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .info-container {
+    flex-direction: column;
+  }
+
+  .info-item {
+    min-width: 100%;
+  }
+}
